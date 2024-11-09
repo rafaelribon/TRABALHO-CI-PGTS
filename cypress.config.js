@@ -5,10 +5,10 @@ module.exports = defineConfig({
   reporterOptions: {
     reportDir: 'cypress/reports', // Diretório onde os relatórios serão salvos
     overwrite: false, // Não sobrescreve relatórios anteriores
-    html: true, // Gera relatório HTML
-    json: true, // Gera relatório JSON
-    charts: true, // Inclui gráficos no relatório HTML
-    reportFilename: 'report.html', // Nome do arquivo de relatório HTML
+    html: true,
+    json: true,
+    charts: true,
+    reportFilename: 'report.html',
   },
   e2e: {
     setupNodeEvents(on, config) {
