@@ -20,7 +20,7 @@ jobs:
 
   unit:
     runs-on: ubuntu-latest
-    timeout-minutoes: 60
+    timeout-minutes: 60
 
     steps:
      - name: 'Rodar Testes Unitarios'
