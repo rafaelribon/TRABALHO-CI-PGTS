@@ -21,16 +21,16 @@ jobs:
   unit:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    needs: inspection
 
     steps:
-     - name: 'Rodar Testes Unitarios'
-       run: echo "step unit test"  
-      
-
+      - name: 'Rodar Testes Unitarios'
+        run: echo "step unit test"
 
   e2e-tests:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    needs: unit
 
     steps:
       - uses: actions/checkout@v4
