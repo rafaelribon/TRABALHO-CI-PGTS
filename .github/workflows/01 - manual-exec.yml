@@ -45,4 +45,4 @@ jobs:
         if: ${{ !cancelled() }}
         with:
           name: relatorio-de-testes
-          path: './cypress/reports/report.html, ./cypress/reports/*.json'
+          path: ./cypress/reports
