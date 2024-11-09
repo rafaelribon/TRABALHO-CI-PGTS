@@ -18,6 +18,16 @@ jobs:
       - name: 'Padronização do código Prettier'
         run: npm run format
 
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutoes: 60
+
+    steps:
+     - name: 'Rodar Testes Unitarios'
+       run: echo "step unit test"  
+      
+
+
   e2e-tests:
     runs-on: ubuntu-latest
     timeout-minutes: 60
