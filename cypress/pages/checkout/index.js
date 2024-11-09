@@ -1,28 +1,21 @@
 class Checkout {
+  verificarDetalhesEndereco() {
+    cy.get('.heading').first().should('have.text', 'Address Details');
+    cy.get('.heading').last().should('have.text', 'Review Your Order');
+  }
 
-    verificarDetalhesEndereco() {
+  preencherComentarios(texto) {
+    cy.get('.form-control').type(texto);
+  }
 
-        cy.get('.heading').first().should('have.text', 'Address Details')
-        cy.get('.heading').last().should('have.text', 'Review Your Order')
-    }
+  finalizarCheckout() {
+    cy.get('.btn-default.check_out').click();
+  }
 
-    preencherComentarios(texto){
-        cy.get('.form-control').type(texto)
-    }
-
-
-    finalizarCheckout(){
-        cy.get('.btn-default.check_out').click()
-
-    }
-
-    realizarCheckout() {
-        cy.get('.btn-default.check_out').should('be.visible')
-        cy.get('.btn-default.check_out').click()
-    }
-
-
-
+  realizarCheckout() {
+    cy.get('.btn-default.check_out').should('be.visible');
+    cy.get('.btn-default.check_out').click();
+  }
 }
 
-export  default new Checkout()
+export default new Checkout();

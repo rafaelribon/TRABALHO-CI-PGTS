@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --check --ignore-path .gitignore ."
   },
   "keywords": [],
   "author": "Rafael Ribon",
@@ -11,7 +12,8 @@
   "description": "Projeot da Disciplina de automacao Web da PGATS",
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
+    "cypress": "^13.7.3",
     "cypress-mochawesome-reporter": "^3.8.2",
-    "cypress": "^13.7.3"
+    "prettier": "^3.3.3"
   }
 }

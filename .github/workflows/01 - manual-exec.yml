@@ -1,29 +1,38 @@
-#  ci nivel 1 
+#  ci nivel 1
 name: 'Execucão Manual'
 
 on:
   workflow_dispatch:
 
-
 jobs:
+  inspection:
+    runs-on: ubuntu-lastest
+    timeout-minutes: 60
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 'Instalando  dependencias do projeto'
+        run: npm install
+
+      - name: 'Padronização do código Prettier'
+        run: npm run format
+
   e2e-tests:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+
     steps:
-      
       - uses: actions/checkout@v4
 
       - name: 'Instalando  dependencias do projeto'
         run: npm install
 
       - name: 'Rodando o cypress '
-        run: npx cypress run 
-      
+        run: npx cypress run
+
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
           name: relatorio-de-testes
           path: ./cypress/reports
-
-
-
